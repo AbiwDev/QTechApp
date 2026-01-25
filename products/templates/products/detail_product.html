@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.name }} | QTech</title>
+    <link rel="stylesheet" href="{% static 'products/css/detail_product.css' %}">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="container">
+        <a href="/" class="logo">QTech</a>
+        <ul class="nav-links">
+            <li><a href="{% url 'main:home' %}">Birinshi bet</a></li>
+            <li><a href="{% url 'products:list_products' %}">O'nimler</a></li>
+            <li><a href="{% url 'main:about' %}">Biz haqqimizda</a></li>
+            <li><a href="{% url 'main:contact' %}">Kontakt</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Product Detail Card -->
+<div class="container">
+    <div class="product-detail-card">
+
+        <!-- Product Image -->
+        <div class="image-box">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+        </div>
+
+        <!-- Product Info -->
+        <div class="product-info">
+            <h1 class="product-title">{{ product.name }}</h1>
+            <p class="price"><strong>Bahası:</strong> {{ product.price }} som</p>
+            <p class="description">{{ product.description }}</p>
+
+            <form action="{% url 'cart:cart_add' product.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="add-btn">Sebetge qosiw</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p>© 2025 QTech. Ba'rshe huqıqlar qorg'alg'an.</p>
+    </div>
+</footer>
+
+</body>
+</html>

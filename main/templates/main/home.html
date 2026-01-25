@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QTech – Texnologiya Ayna</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'main/css/home.css' %}">
+</head>
+<body>
+
+<!-- ================= HEADER ================ -->
+<header class="header">
+    <div class="container">
+        <div class="logo">QTech</div>
+        <nav class="nav">
+            <a href="{% url 'main:home' %}" class="nav-link">Birinshi bet</a>
+            <a href="{% url 'main:about' %}" class="nav-link">Mag'lıwmat</a>
+            <a href="{% url 'main:contact' %}" class="nav-link">Kontakt</a>
+            <a href="{% url 'products:list_products' %}" class="nav-link products-btn">O'nimler</a>
+        </nav>
+    </div>
+</header>
+
+<!-- ================= HERO SECTION ================ -->
+<section class="hero">
+    <div class="container hero-content">
+        <h1 class="hero-title">Xosh keldin'iz 
+        <span>QTech</span> ke!</h1>
+        <p class="hero-subtitle">
+            En' son'gi texnologiyalardı en' qolaylı bahalarda taba alasiz.
+        </p>
+        <a href="{% url 'products:list_products' %}" class="hero-btn">O'nimler</a>
+    </div>
+</section>
+
+<!-- ================= FEATURES ================ -->
+<section class="features">
+    <div class="container features-grid">
+
+        <div class="feature-card">
+            <img src="{% static 'main/images/shipping.png' %}" alt="Fast Shipping">
+            <h3>Tez Jetkizip Beriw</h3>
+            <p>O'nimler qisqa mu'ddette, qa'wipsiz jetkiziledi.</p>
+        </div>
+
+        <div class="feature-card">
+            <img src="{% static 'main/images/support.png' %}" alt="Support">
+            <h3>24/7 Paydalanıwshilar Xizmeti</h3>
+            <p>Ha'r qanday sorawlarin'z bolsa, ja'rdem beremiz.</p>
+        </div>
+
+        <div class="feature-card">
+            <img src="{% static 'main/images/secure.png' %}" alt="Secure Payment">
+            <h3>Qa'wipsiz Toʻlew</h3>
+            <p>Bizdin' to‘lew da'stu'rimiz' toliq qa'wipsizlik tiykarinda.</p>
+        </div>
+        
+    </div>
+</section>
+
+<!-- ================= FOOTER ================ -->
+<footer class="footer">
+    <div class="container">
+        <p>© 2025 QTech. All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>

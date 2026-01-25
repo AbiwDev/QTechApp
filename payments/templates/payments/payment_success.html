@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>To‘lew bo'limi | QTech</title>
+<link rel="stylesheet" href="{% static 'payments/css/payment_success.css' %}">
+</head>
+<body>
+<nav class="navbar">
+    <div class="header">
+        <a href="{% url 'main:home' %}" class="logo">QTech</a>
+        <ul class="nav-links">
+            <li><a href="{% url 'main:home' %}">Birinshi bet</a></li>
+            <li><a href="{% url 'products:list_products' %}">O'nimler</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container success-message">
+    <h1>To‘lew tuwri a'melge asırıldı!</h1>
+    <p>Buyırtpan'iz qabıl qılındı. Tez arada siz benen baylanisamiz.</p>
+    <a href="{% url 'main:home' %}" class="back-btn">Birinshi betge qaytıw</a>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p>© 2025 QTech. Ba'rche huqıqlar qorg'alg'an.</p>
+    </div>
+</footer>
+</body>
+</html>
